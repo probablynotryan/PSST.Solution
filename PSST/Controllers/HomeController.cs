@@ -11,5 +11,11 @@ namespace Treats.Controllers
     {
       _db = db;
     }
+
+        [HttpGet("/")]
+    public ActionResult Index()
+    {
+      return View();
+    }
   }
 }
