@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 using Treats.Models;
 
-namespace PSST.Controllers
+namespace Treats.Controllers
 {
   public class HomeController : Controller
   {
-    private readonly TreatContext _db;
-    public HomeController(TreatContext db)
+    private readonly TreatsContext _db;
+    public HomeController(TreatsContext db)
     {
       _db = db;
     }

@@ -8,7 +8,7 @@ namespace Treats.Models
     public DbSet<Sweet> Sweets { get; set; }
     public DbSet<FlavorSweet> FlavorSweet { get; set; }
 
-    public FactoryContext(DbContextOptions options) : base(options) { }
+    public TreatsContext(DbContextOptions options) : base(options) { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
