@@ -20,3 +20,9 @@ body {
 .float-right {
   float: right;
 }
+
+#delete-icon {
+  height: 20px;
+  width: auto;
+  margin-left: 200px;
+}
