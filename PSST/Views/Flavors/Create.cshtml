@@ -1,0 +1,13 @@
+@{
+  Layout = "_Layout";
+}
+@using Treats.Models
+@model Treats.Models.Flavor
+
+<h4>Add a Flavor</h4>
+@using (Html.BeginForm())
+{
+  @Html.TextBoxFor(model => model.FlavorName)
+
+  <input type="submit" value="Add Flavor">
+}
