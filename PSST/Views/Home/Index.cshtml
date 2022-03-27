@@ -1,5 +1,22 @@
 @{
   Layout = "_Layout";
 }
+@model Treats.ViewModels.UserViewModel;
 
-<p>Test</p>
+@if (Model.Sweets.Count != 0)
+{
+  <p>@Model.Sweets</p>
+}
+else
+{
+  <p>No sweets around, champ.</p>
+}
+
+@if (Model.Flavors.Count != 0)
+{
+  <p>@Model.Flavors</p>
+}
+else
+{
+  <p>No flavors around, champ.</p>
+}
