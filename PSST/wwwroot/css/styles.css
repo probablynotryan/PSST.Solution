@@ -1,3 +1,22 @@
 body {
-  background-color: aqua;
+  background-image: url("../media/psst-background.jpeg");
+  background-repeat: yes;
+  background-size: 300px 300px;
+}
+
+.container {
+  background-color: white;
+  border: solid gray;
+  margin-top: 20px;
+  height: 75%;
+}
+
+.col {
+  border: solid black;
+  margin: 10px;
+  height: 200px;
+}
+
+.float-right {
+  float: right;
 }
