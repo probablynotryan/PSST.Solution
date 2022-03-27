@@ -8,12 +8,15 @@
 {
   <h3>No flavors are currently in the database</h3>
 }
-<ul>
-  @foreach(Flavor f in Model)
+@foreach(Flavor f in Model)
+{
+  @using (Html.BeginForm("Delete", "Flavors"))
   {
-    <li>@Html.ActionLink($"{f.FlavorName}", "Details", new {id = f.FlavorId})</li>
+    @Html.Hidden("id", @f.FlavorId)
+    @f.FlavorName
+    <input type="image" id="delete-icon" src="media/delete.png" alt="submit" />
   }
-</ul>
+}
 @Html.ActionLink("Add new Flavor", "Create")
 <br>
 @Html.ActionLink("Go Back", "Index", "Home")
