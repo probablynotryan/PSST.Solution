@@ -26,3 +26,16 @@
     }
   </div>
 </div>
+@if (User.Identity.IsAuthenticated)
+{
+  <div class="float-right">
+    @Html.ActionLink("Them Flavors", "Index", "Flavors")
+  </div>
+  @Html.ActionLink("Them Sweets", "Index", "Sweets")
+}
+else
+{
+  <p>Not seeing your sweets or flavors?
+  @Html.ActionLink("Login", "Login", "Account")!
+  </p>
+}
