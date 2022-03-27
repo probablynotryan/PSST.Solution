@@ -20,19 +20,10 @@ namespace Treats.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+      ViewBag.Flavors = _db.Flavors.ToList();
+      ViewBag.Sweets = _db.Sweets.ToList();
 
-      var HomeModel = new UserViewModel {
-        UserId = userId,
-        Flavors = _db.Flavors.ToList()
-          .OrderByDescending(flavor => flavor.User.Id == userId)
-          .ToList(),
-        Sweets = _db.Sweets
-          .OrderByDescending(sweet => sweet.User.Id == userId)
-          .ToList()
-      };
-
-      return View(HomeModel);
+      return View();
     }
   }
 }

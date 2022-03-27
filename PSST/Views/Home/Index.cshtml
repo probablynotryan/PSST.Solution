@@ -1,14 +1,17 @@
 @{
   Layout = "_Layout";
 }
-@model Treats.ViewModels.UserViewModel;
+@using Treats.Models
 <h4 class="float-right">Flavors</h4>
 <h4>Sweets</h4>
 <div class = "row">
   <div class="col">
-    @if (Model.Sweets.Count != 0)
+    @if (ViewBag.Sweets.Count != 0)
     {
-      <p>@Model.Sweets</p>
+      @foreach (Sweet s in ViewBag.Sweets)
+      {
+      <p>@s.SweetName</p>
+      }
     }
     else
     {
@@ -16,9 +19,12 @@
     }
   </div>
   <div class="col">
-    @if (Model.Flavors.Count != 0)
+    @if (ViewBag.Flavors.Count != 0)
     {
-      <p>@Model.Flavors</p>
+     @foreach (Flavor f in ViewBag.Flavors)
+      {
+      <p>@f.FlavorName</p>
+      }
     }
     else
     {
