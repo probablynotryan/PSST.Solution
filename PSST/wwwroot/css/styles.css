@@ -6,9 +6,10 @@ body {
 
 .container {
   background-color: white;
-  border: solid gray;
+  border: solid black 1px;
   margin-top: 20px;
   height: 75%;
+  margin-bottom: 10px;
 }
 
 .col {
@@ -21,8 +22,31 @@ body {
   float: right;
 }
 
-#delete-icon {
-  height: 20px;
+#edit-icon {
+  position: relative;
+  height: 15px;
   width: auto;
-  margin-left: 200px;
+  float: right;
+  top: 3px;
+}
+
+#delete-icon {
+  position: relative;
+  float: right;
+  height: 15px;
+  width: auto;
+  top: 3px;
+  margin-right: 75px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  margin-left: -45px;
+}
+
+button {
+  margin-bottom: 10px;
 }
