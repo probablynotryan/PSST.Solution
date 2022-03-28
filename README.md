@@ -17,7 +17,7 @@
 
 ## Description
 
-Pieer
+This MVC site will allow a user to register a email address with an preferred password, and then allow that user to add Flavors/Sweets to a many-to-many database that anonymous views can view on the splash page!
 
 ## Setup/Installation Requirements
 
