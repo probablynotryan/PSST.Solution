@@ -8,6 +8,16 @@
   </head>
   <body>
     <div class="container">
+      @if (User.Identity.IsAuthenticated)
+      {
+        @using (Html.BeginForm("LogOff", "Account"))
+        {
+        <div class="float-right">
+          Logged On: @User.Identity.Name
+          <input type="submit" value="Log out" />
+        </div>
+        }
+      }
       <h3>Pierre's Bakery 2.0</h3>
       <hr>
       @RenderBody()
