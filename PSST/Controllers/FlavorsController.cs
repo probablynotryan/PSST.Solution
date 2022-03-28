@@ -53,13 +53,18 @@ namespace Treats.Controllers
 
     public ActionResult Edit(int id)
     {
+      ViewBag.SweetId = new SelectList(_db.Sweets, "SweetId", "SweetName");
       var thisFlavor = _db.Flavors.FirstOrDefault(f => f.FlavorId == id);
       return View(thisFlavor);
     }
 
     [HttpPost]
-    public ActionResult Edit(Flavor flavor)
+    public ActionResult Edit(Flavor flavor, int SweetId)
     {
+      if (SweetId != 0)
+      {
+        _db.FlavorSweet.Add(new FlavorSweet() { FlavorId = flavor.FlavorId, SweetId = SweetId });
+      }
       _db.Entry(flavor).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
