@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+@using Treats.Models
+@model Treats.Models.Sweet
+
+<h4>Add a Sweet</h4>
+@using (Html.BeginForm())
+{
+  @Html.TextBoxFor(model => model.SweetName)
+
+  <input type="submit" value="Add Sweet">
+}
+
+<button>@Html.ActionLink("Go Back", "Index", "Home")</button>

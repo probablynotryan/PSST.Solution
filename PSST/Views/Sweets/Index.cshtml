@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+@using Treats.Models;
+@model List<Treats.Models.Sweet>
+<div class="container">
+  @if (@Model.Count == 0)
+  {
+    <h3>No sweets are currently in the database.</h3>
+  }
+  @foreach(Sweet s in Model)
+  {
+    @using (Html.BeginForm("Delete", "Sweets"))
+    {
+      @Html.Hidden("id", @s.SweetId)
+      @s.SweetName
+      <input type="image" id="delete-icon" src="media/delete.png" alt="submit" />
+      <a href='@Url.Action("Edit", "Sweets", new {id = @s.SweetId})'>
+        <img src="media/edit.png" id="edit-icon">
+      </a>
+    }
+  }
+</div>
+<button>@Html.ActionLink("Add Sweet", "Create")</button>
+<button>@Html.ActionLink("Go Back", "Index", "Home")</button>

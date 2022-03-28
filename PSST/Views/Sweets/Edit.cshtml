@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Treats.Models.Sweet
+
+<h2>Change Sweet Name:</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.SweetId)
+
+  @Html.LabelFor(model => model.SweetName)
+  @Html.EditorFor(model => model.SweetName)
+
+  <input type="submit" value="Save" />
+}
+
+<button>@Html.ActionLink("Go Back", "Index")</button>
