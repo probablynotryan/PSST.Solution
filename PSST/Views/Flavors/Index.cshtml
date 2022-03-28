@@ -3,20 +3,23 @@
 }
 @using Treats.Models;
 @model List<Treats.Models.Flavor>
-
-@if (@Model.Count == 0)
-{
-  <h3>No flavors are currently in the database</h3>
-}
-@foreach(Flavor f in Model)
-{
-  @using (Html.BeginForm("Delete", "Flavors"))
+<div class="container">
+  @if (@Model.Count == 0)
   {
-    @Html.Hidden("id", @f.FlavorId)
-    @f.FlavorName
-    <input type="image" id="delete-icon" src="media/delete.png" alt="submit" />
+    <h3>No flavors are currently in the database.</h3>
   }
-}
-@Html.ActionLink("Add new Flavor", "Create")
-<br>
-@Html.ActionLink("Go Back", "Index", "Home")
+  @foreach(Flavor f in Model)
+  {
+    @using (Html.BeginForm("Delete", "Flavors"))
+    {
+      @Html.Hidden("id", @f.FlavorId)
+      @f.FlavorName
+      <input type="image" id="delete-icon" src="media/delete.png" alt="submit" />
+      <a href='@Url.Action("Edit", "Flavors", new {id = @f.FlavorId})'>
+        <img src="media/edit.png" id="edit-icon">
+      </a>
+    }
+  }
+</div>
+<button>@Html.ActionLink("Add Flavor", "Create")</button>
+<button>@Html.ActionLink("Go Back", "Index", "Home")</button>
